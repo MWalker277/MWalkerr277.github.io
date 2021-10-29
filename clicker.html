@@ -1,25 +1,57 @@
 <!doctype html>
 <html>
-	<head> 
-        <style>
-            div {
-             height: 200px;
-             width: 200px;
-             background-color: black
-            } 
+
+<head>
+    <style>
+      body   {
+            
+            background-color: rgb(212, 194, 145)
+        }
+
+        
+        
+        
+    </style>
 
 
-        </style>
-    </head>
-    <body> 
-         <img  id = "coolsword" src="coolsword.png" height = "75px">
+    <title> Sword Slasher </title>
 
-    </body>
+</head>
+
+<body>
+
+    <center>
+        <b1>Sword Slasher </b1>
+        <br>
+        <img id="coolsword" src="coolsword.png" height="75px">
+
+        <p> click the sword to slash!</p>
+
+        <p id = "count"> 0 slashes   </p>
+
+        <button id="slash"> Slash </button>
+    </center>
+
+</body>
+
 </html>
 <script>
-    document.getElementById("coolsword").addEventListener("click",imgClick)
-    function imgClick() {
-        var clicks = 0 
-    }
-</script>
 
+    document.getElementById("coolsword").addEventListener("click", imgClick)
+    var clicks = 0 
+    setInterval(idle,500)
+    function imgClick() {
+        clicks = clicks + 1
+
+        document.getElementById("count").innerText = clicks + "  slashes"
+    }
+    function idle() {
+        clicks = clicks + 1
+
+        document.getElementById("count").innerText = clicks + " slashes"
+    }
+
+
+
+
+</script>
