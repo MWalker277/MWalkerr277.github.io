@@ -11,10 +11,13 @@
         
         
         
+        
     </style>
 
 
     <title> Sword Slasher </title>
+
+    
 
 </head>
 
@@ -31,25 +34,58 @@
 
         <button id="slash"> Slash </button>
     </center>
+        <button id = "IIslash"> 2x Slash </button>
 
+        <button id = "idleslash"> Idle Slash </button>
+        
+
+        
+       <div id = "main">
+            <div id = "sidebar">
+
+
+
+            </div>
+
+
+       </div>
 </body>
 
 </html>
 <script>
 
     document.getElementById("coolsword").addEventListener("click", imgClick)
+    document.getElementById("slash").addEventListener("click", imgClick)
+    document.getElementById("IIslash").addEventListener("click",IIslash)
     var clicks = 0 
     setInterval(idle,500)
+
     function imgClick() {
         clicks = clicks + 1
 
         document.getElementById("count").innerText = clicks + "  slashes"
     }
+
     function idle() {
-        clicks = clicks + 1
+        clicks = clicks + 0
 
         document.getElementById("count").innerText = clicks + " slashes"
     }
+  
+    function IIslash() {
+        clicks = clicks + 2
+
+        document.getElementById("count").innerText = clicks + " slashes"
+    }
+    
+    function IIslash (){ 
+        if(clicks >= 50) {
+            clicks = clicks + 2
+    
+        document.getElementById("count").innerText = clicks + " slashes"
+        }
+    }
+     
 
 
 
