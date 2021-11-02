@@ -10,7 +10,7 @@
 
         }
 
-        .content {
+        
             
 
 
@@ -59,13 +59,12 @@
         <p>Reach 100 slashs to upgrade to 2x Slash!</p>
         <button id = "IIslash"> 2x Slash </button>
 
-        <p>
-        
-        </p>
+       <button id = "threeslash"> 3x Strength</button>
+       
        
     </div> 
     
-    <div class = "circle"> </div>
+   
     
 
 
@@ -87,7 +86,7 @@
     }
 
     function idle() {
-        clicks = clicks + 0
+        clicks = clicks + 1
 
         document.getElementById("count").innerText = clicks + " slashes"
     }
@@ -99,7 +98,7 @@
     }
     
     function IIslash (){ 
-        if(clicks >= 100) {
+        if(clicks >= 50) {
             clicks = clicks + 2
     
         document.getElementById("count").innerText = clicks + " slashes"
@@ -107,7 +106,7 @@
     }
 
     function idle() {
-        if(clicks >= 100) {
+        if(clicks >= 50) {
             clicks = clicks + 2
 
             document.getElementById("count").innerText = clicks + " slashes"
