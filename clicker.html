@@ -4,12 +4,30 @@
 <head>
     <style>
       body   {
-            
-            background-color: rgb(212, 194, 145)
+            background-color: rgb(223, 181, 126);
+            justify-content: center;
+            align-items: center;
+
         }
 
+        .content {
+            
+
+
+
+        }
+
+
+        .cirlce {
+            background-color: rgb(0, 0, 0);
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+
+        }
         
-        
+
+
         
         
     </style>
@@ -23,6 +41,7 @@
 
 <body>
 
+    <div id = "content">
     <center>
         <b1>Sword Slasher </b1>
         <br>
@@ -34,21 +53,22 @@
 
         <button id="slash"> Slash </button>
     </center>
+    </div>
+
+    <div class = "upgrades">
+        <p>Reach 100 slashs to upgrade to 2x Slash!</p>
         <button id = "IIslash"> 2x Slash </button>
 
-        <button id = "idleslash"> Idle Slash </button>
+        <p>
         
-
-        
-       <div id = "main">
-            <div id = "sidebar">
-
-
-
-            </div>
+        </p>
+       
+    </div> 
+    
+    <div class = "circle"> </div>
+    
 
 
-       </div>
 </body>
 
 </html>
@@ -79,10 +99,18 @@
     }
     
     function IIslash (){ 
-        if(clicks >= 50) {
+        if(clicks >= 100) {
             clicks = clicks + 2
     
         document.getElementById("count").innerText = clicks + " slashes"
+        }
+    }
+
+    function idle() {
+        if(clicks >= 100) {
+            clicks = clicks + 2
+
+            document.getElementById("count").innerText = clicks + " slashes"
         }
     }
      
