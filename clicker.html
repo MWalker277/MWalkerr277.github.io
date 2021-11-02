@@ -15,7 +15,7 @@
 
 
 
-        }
+        
 
 
         .cirlce {
@@ -25,7 +25,21 @@
             border-radius: 50%;
 
         }
+
+        .upgrades { 
+        border-color: rgb(99, 70, 8);
+        border-width: 2px;
+        border-style: solid;
+        margin: 10px;
+        margin-left:30%;
+        margin-right:30%;
+        padding:5px;
+        text-align: center;
+
+
+        }
         
+        button {margin-top:20px;}
 
 
         
@@ -56,11 +70,13 @@
     </div>
 
     <div class = "upgrades">
-        <p>Reach 100 slashs to upgrade to 2x Slash!</p>
-        <button id = "IIslash"> 2x Slash </button>
+        <p>Upgrades</p>
 
-       <button id = "threeslash"> 3x Strength</button>
-       
+        <p> get 100 slashs to upgrade to Idle Slash!</p>
+        <button id = "idleslash"> Idle Slash</button>
+        <br>
+        <p>reach 300 slashes to upgrade to 2x Slash!</p>
+        <button id = "IIslash"> 2x Slash </button>
        
     </div> 
     
@@ -76,6 +92,9 @@
     document.getElementById("coolsword").addEventListener("click", imgClick)
     document.getElementById("slash").addEventListener("click", imgClick)
     document.getElementById("IIslash").addEventListener("click",IIslash)
+    
+    var slashes = 1
+    var ClicksPerSec = 0
     var clicks = 0 
     setInterval(idle,500)
 
@@ -86,32 +105,23 @@
     }
 
     function idle() {
-        clicks = clicks + 1
-
-        document.getElementById("count").innerText = clicks + " slashes"
-    }
-  
-    function IIslash() {
-        clicks = clicks + 2
-
-        document.getElementById("count").innerText = clicks + " slashes"
-    }
-    
-    function IIslash (){ 
         if(clicks >= 50) {
-            clicks = clicks + 2
-    
-        document.getElementById("count").innerText = clicks + " slashes"
-        }
-    }
-
-    function idle() {
-        if(clicks >= 50) {
-            clicks = clicks + 2
+            clicks = clicks + 1
 
             document.getElementById("count").innerText = clicks + " slashes"
         }
     }
+    
+    function IIslash (){ 
+        if(clicks >= 100) {
+            clicks = clicks + 2
+            clicksPerSec = 2
+    
+        document.getElementById("count").innerText = clicks + " slashes"
+        }
+    }
+
+    
      
 
 
