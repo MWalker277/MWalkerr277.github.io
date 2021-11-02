@@ -10,23 +10,21 @@
 
         }
 
-        
-            
-
-
-
-        
-
-
-        .cirlce {
-            background-color: rgb(0, 0, 0);
-            height: 200px;
-            width: 200px;
-            border-radius: 50%;
-
-        }
 
         .upgrades { 
+        border-color: rgb(99, 70, 8);
+        border-width: 2px;
+        border-style: solid;
+        margin: 10px;
+        margin-left:40%;
+        margin-right:40%;
+        padding:5px;
+        text-align: center;
+
+
+        }
+        
+        .power {
         border-color: rgb(99, 70, 8);
         border-width: 2px;
         border-style: solid;
@@ -36,18 +34,17 @@
         padding:5px;
         text-align: center;
 
-
         }
-        
-        button {margin-top:20px;}
 
+
+        button {margin-top:20px;}
 
         
         
     </style>
 
 
-    <title> Sword Slasher </title>
+    
 
     
 
@@ -57,7 +54,7 @@
 
     <div id = "content">
     <center>
-        <b1>Sword Slasher </b1>
+        <h1>Sword Slasher </h1>
         <br>
         <img id="coolsword" src="coolsword.png" height="75px">
 
@@ -72,16 +69,19 @@
     <div class = "upgrades">
         <p>Upgrades</p>
 
-        <p> get 100 slashs to upgrade to Idle Slash!</p>
+        <p> get 100 Power to upgrade to Idle Slash!</p>
         <button id = "idleslash"> Idle Slash</button>
         <br>
-        <p>reach 300 slashes to upgrade to 2x Slash!</p>
+        <p>reach 300 Power to upgrade to 2x Slash!</p>
         <button id = "IIslash"> 2x Slash </button>
        
     </div> 
     
+    <div id = "power"> 
+        <p id = "currency"> 0 Power </p>
+    </div> 
+
    
-    
 
 
 </body>
@@ -92,10 +92,12 @@
     document.getElementById("coolsword").addEventListener("click", imgClick)
     document.getElementById("slash").addEventListener("click", imgClick)
     document.getElementById("IIslash").addEventListener("click",IIslash)
-    
-    var slashes = 1
+    document.getElementById("currency"),addEventListener("click",Bpower)
+
+    var Cpower = 0
     var ClicksPerSec = 0
     var clicks = 0 
+
     setInterval(idle,500)
 
     function imgClick() {
@@ -120,11 +122,17 @@
         document.getElementById("count").innerText = clicks + " slashes"
         }
     }
+    function Bpower() {
+        if(clicks >= 1) {
+            Cpower = Cpower + 1
 
-    
-     
+            document.getElementById("currency").innerText = clicks + " Power"
+        }
+    }
 
-
-
+    function Bpower() {
+        if(clicks <=50)
+        alert("you do not have enough power for this")
+    }
 
 </script>
