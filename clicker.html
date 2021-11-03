@@ -66,20 +66,26 @@
     </center>
     </div>
 
+
+    <div id = "power"> 
+        <center>
+        <p id = "currency"> 0 Power </p>
+        </center>
+    </div>
+     
+
     <div class = "upgrades">
         <p>Upgrades</p>
 
-        <p> get 100 Power to upgrade to Idle Slash!</p>
+        <p> get 50 Power to upgrade to Idle Slash!</p>
         <button id = "idleslash"> Idle Slash</button>
         <br>
-        <p>reach 300 Power to upgrade to 2x Slash!</p>
-        <button id = "IIslash"> 2x Slash </button>
+        <p>reach 100 Power to upgrade to 2x Slash!</p>
+        <button id = "IIslash" onclick="notif"> 2x Slash </button>
        
     </div> 
     
-    <div id = "power"> 
-        <p id = "currency"> 0 Power </p>
-    </div> 
+    
 
    
 
@@ -92,7 +98,8 @@
     document.getElementById("coolsword").addEventListener("click", imgClick)
     document.getElementById("slash").addEventListener("click", imgClick)
     document.getElementById("IIslash").addEventListener("click",IIslash)
-    document.getElementById("currency"),addEventListener("click",Bpower)
+    document.getElementById("currency").addEventListener("click",Bpower)
+    document.getElementById("IIslash").addEventListener("click",notif)
 
     var Cpower = 0
     var ClicksPerSec = 0
@@ -130,9 +137,11 @@
         }
     }
 
-    function Bpower() {
-        if(clicks <=50)
-        alert("you do not have enough power for this")
+    function notif() {
+        if(clicks <= 1) {
+            alert("you do not have enough power for this")
+        }
+        
     }
 
 </script>
