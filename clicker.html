@@ -33,7 +33,6 @@
         margin-right:30%;
         padding:5px;
         text-align: center;
-
         }
 
 
@@ -99,7 +98,7 @@
     document.getElementById("slash").addEventListener("click", imgClick)
     document.getElementById("IIslash").addEventListener("click",IIslash)
     document.getElementById("currency").addEventListener("click",Bpower)
-    document.getElementById("IIslash").addEventListener("click",notif)
+    
 
     var Cpower = 0
     var ClicksPerSec = 0
@@ -136,12 +135,23 @@
             document.getElementById("currency").innerText = clicks + " Power"
         }
     }
+    //alerts below//
 
+    document.getElementById("idleslash").addEventListener("click",notif)
     function notif() {
-        if(clicks <= 1) {
+        if(clicks <= 50) {
+            alert("you do not have enough power for this")
+        }
+    }
+    
+
+    document.getElementById("IIslash").addEventListener("click",notif)
+    function notif() {
+        if(clicks <= 100) {
             alert("you do not have enough power for this")
         }
         
     }
+    // end alerts//
 
 </script>
