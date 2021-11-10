@@ -20,25 +20,15 @@
         margin-right:40%;
         padding:5px;
         text-align: center;
-
-
         }
         
-        .power {
-        border-color: rgb(99, 70, 8);
-        border-width: 2px;
-        border-style: solid;
-        margin: 10px;
-        margin-left:30%;
-        margin-right:30%;
-        padding:5px;
-        text-align: center;
-        }
-
-
         button {margin-top:20px;}
 
-        
+        .idleButton {
+            color:green;
+            width:100%;
+            height:1000px;
+        }
         
     </style>
 
@@ -53,7 +43,7 @@
 
     <div id = "content">
     <center>
-        <h1>Sword Slasher </h1>
+        <h1>sword Slasher </h1>
         <br>
         <img id="coolsword" src="coolsword.png" height="75px">
 
@@ -66,25 +56,19 @@
     </div>
 
 
-    <div id = "power"> 
-        <center>
-        <p id = "currency"> 0 Power </p>
-        </center>
-    </div>
-     
 
     <div class = "upgrades">
         <p>Upgrades</p>
 
-        <p> get 50 Power to upgrade to Idle Slash!</p>
-        <button id = "idleslash"> Idle Slash</button>
+        <p> get 50 slashes to upgrade to Idle Slash!</p>
+        <button id = "idleButton" > Idle Slash</button>
         <br>
-        <p>reach 100 Power to upgrade to 2x Slash!</p>
-        <button id = "IIslash" onclick="notif"> 2x Slash </button>
+        <p>reach 100 slahses to upgrade to 2x Slash!</p>
+        <button id = "IIslash" > 2x Slash </button>
        
     </div> 
     
-    
+    <div class = "progress"> </div>
 
    
 
@@ -96,13 +80,14 @@
 
     document.getElementById("coolsword").addEventListener("click", imgClick)
     document.getElementById("slash").addEventListener("click", imgClick)
-    document.getElementById("IIslash").addEventListener("click",IIslash)
-    document.getElementById("currency").addEventListener("click",Bpower)
-    
+    document.getElementById("IIslash").addEventListener("click",doubleSlash)
+    document.getElementById("IIslash").addEventListener("click",notif) 
+    document.getElementById("idleButton").addEventListener("click",notif2)
 
-    var Cpower = 0
+   
     var ClicksPerSec = 0
     var clicks = 0 
+
 
     setInterval(idle,500)
 
@@ -113,44 +98,45 @@
     }
 
     function idle() {
-        if(clicks >= 50) {
-            clicks = clicks + 1
-
-            document.getElementById("count").innerText = clicks + " slashes"
-        }
+                if(clicks >= 50){
+                    clicks = clicks + 1
+            
+         document.getElementById("count").innerText = clicks + " slashes"
+            }
     }
     
-    function IIslash (){ 
-        if(clicks >= 100) {
-            clicks = clicks + 2
-            clicksPerSec = 2
+    function doubleSlash () { 
+                if(clicks >= 100) {
+            clicks = clicks + 1
     
         document.getElementById("count").innerText = clicks + " slashes"
         }
     }
-    function Bpower() {
-        if(clicks >= 1) {
-            Cpower = Cpower + 1
 
-            document.getElementById("currency").innerText = clicks + " Power"
+
+    function update() {
+        clicks = click + 1
+        document.getElementById("idleButton").innerText = upgrades
+        if(score >= 2) {
+            document.getElementById("idleButton").classList.add("idleButton")
         }
     }
+
+    
+    
     //alerts below//
 
-    document.getElementById("idleslash").addEventListener("click",notif)
-    function notif() {
-        if(clicks <= 50) {
-            alert("you do not have enough power for this")
-        }
-    }
-    
-
-    document.getElementById("IIslash").addEventListener("click",notif)
     function notif() {
         if(clicks <= 100) {
             alert("you do not have enough power for this")
         }
         
+    }
+
+    function notif2() {
+          if(clicks <= 50) {
+            alert("you do not have enough power for this")
+        }
     }
     // end alerts//
 
