@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<head></head>
+
+<style></style>
+
+
+<body>
+    <img id = "orange" src ="car.png" height ="80px" width ="140px"> 
+    <img id ="blue" src ="blue car T.png" height ="80px" width= "140px">
+</body>
+
+<script>
+    var blue = document.getElementById("blue")
+    var orange = document.getElementById("orange")
+    var x = 0
+
+    document.addEventListener("keyup", keyuphandler)
+        function keyuphandler(e) {
+            if(e.key==="w") {
+                blue.style.left = parseInt(blue.style.left) + 5 + "px";
+            }
+
+        }
+    
+</script>
