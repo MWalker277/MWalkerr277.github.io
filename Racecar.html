@@ -1,26 +1,70 @@
 <!DOCTYPE html>
 
-<head></head>
+<head>
+    <style>
+        img{
+            position:absolute;
+        }
+        #blue{
+            top: 450px;
+        }
 
-<style></style>
+        #orange {
+            top: 325px;
+        }
+
+        h2 {
+            text-align:center;
+            color:aquamarine;
+        }
+
+        body {
+            background-image:url("https://media.istockphoto.com/vectors/moto-race-lane-gp-track-with-start-finish-line-and-borders-racetrack-vector-id1221451225?k=20&m=1221451225&s=612x612&w=0&h=AAiVuhJLjzeqIAL5soOCfNju4SSkRFa4EMkSTYkgPkw=");
+            background-position: 50%;
+            background-repeat: no-repeat;
+            padding-top: 50%;
+            background-size:30%;
+
+        }
+    </style>
+
+</head>
+
 
 
 <body>
     <img id = "orange" src ="car.png" height ="80px" width ="140px"> 
     <img id ="blue" src ="blue car T.png" height ="80px" width= "140px">
+    <h2 id = "h2"> Timer <h2>
+    
 </body>
 
 <script>
+    var time = 0
     var blue = document.getElementById("blue")
     var orange = document.getElementById("orange")
     var x = 0
 
-    document.addEventListener("keyup", keyuphandler)
-        function keyuphandler(e) {
+    document.addEventListener("keydown", keydownhandler)
+       
+    function keydownhandler(e) {
             if(e.key==="w") {
-                blue.style.left = parseInt(blue.style.left) + 5 + "px";
+                blue.style.left = x + "px"
+                x = x + 10
             }
-
+           if (e.key==="e") {
+               orange.style.left = x + "px"
+                x = x + 10
+           }
         }
+
+    document.getElementById("h2").innerHTML = "Press W to start"
+    
+    setInterval(timer,1000 )
+
+    function timer() {
+        time = 0
+        
+    }
     
 </script>
